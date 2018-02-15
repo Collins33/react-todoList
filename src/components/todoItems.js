@@ -9,7 +9,8 @@ class TodoItems extends Component{
     }
 
     createTask(item){
-    return <li key={item.key}>{item.text}</li>
+    return <li onClick={()=>this.delete(item.key)}
+    key={item.key} className="well">{item.text}</li>
     }
 
 
@@ -17,8 +18,8 @@ class TodoItems extends Component{
         var todoListEntries=this.props.entries;
         var listItems=todoListEntries.map(this.createTask)
         return(
-            <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 well">
-            <h1 class="text-center">MY TASKS</h1>
+            <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <h1 className="text-center">MY TASKS</h1>
             <ul className="theList">
              {listItems}
             </ul>

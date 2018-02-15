@@ -23,7 +23,7 @@ class TodoList extends Component{
         if( this._inputElement.value !==""){//if the input has a value
            itemArray.unshift({
                text:this._inputElement.value,//get the value and put it in the state property
-               key:Date.now +1
+               key:Date.now
            });
            this.setState({
                items:itemArray
