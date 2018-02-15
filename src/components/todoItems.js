@@ -6,11 +6,16 @@ class TodoItems extends Component{
 
 
     this.createTask=this.createTask.bind(this)
+    this.delete=this.delete.bind(this)
     }
 
     createTask(item){
     return <li onClick={()=>this.delete(item.key)}
     key={item.key} className="well">{item.text}</li>
+    }
+
+    delete(key){
+        this.props.delete(key)
     }
 
 
