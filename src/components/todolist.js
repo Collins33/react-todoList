@@ -13,6 +13,8 @@ class TodoList extends Component{
         
         //adding the class method
         this.addItem=this.addItem.bind(this)
+        //bind the delete method
+        this.deleteItem=this.deleteItem.bind(this)
     }
 
     //the method called when you submit form
@@ -33,6 +35,21 @@ class TodoList extends Component{
         }
         console.log(itemArray)
         e.preventDefault();
+
+    }
+
+    //method to remove item when clicked
+
+    deleteItem(key){
+        //create new array with values filtered out
+        var filteredItems=this.state.items.filter(function(item){
+            return (item.key !== key)
+        })
+        
+        //set the new state
+        this.setState({
+            items:filteredItems
+        });
 
     }
     render(){
