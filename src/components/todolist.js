@@ -17,6 +17,21 @@ class TodoList extends Component{
     //the method called when you submit form
 
     addItem(e){
+        var itemArray=this.state.items//itemArray stores the current value of our items state object
+
+        if( this._inputElement.value !==""){//if the input has a value
+           itemArray.unshift({
+               text:this._inputElement.value,//get the value and put it in the state property
+               key:Date.now
+           });
+           this.setState({
+               items:itemArray
+           });
+           //clear the input field
+           this._inputElement.value=""
+        }
+        console.log(itemArray)
+        e.preventDefault();
 
     }
     render(){
